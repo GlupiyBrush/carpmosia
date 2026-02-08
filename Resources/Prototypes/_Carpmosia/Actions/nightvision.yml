@@ -1,0 +1,30 @@
+- type: entity
+  parent: BaseAction
+  id: ActionToggleNightVision
+  name: Toggle night-vision
+  description: Toggle your night vision.
+  components:
+  - type: Action
+    useDelay: 3
+    icon:
+      sprite: Mobs/Animals/mothroach/mothroach.rsi
+      state: icon
+    clientExclusive: true
+  - type: InstantAction
+    event: !type:ToggleNightVisionActionEvent {}
+
+- type: entity
+  parent: BaseMentalAction
+  id: ActionTogglePersonalLight
+  name: Toggle personal light
+  description: Toggle your personal light.
+  components:
+  - type: Action
+    startDelay: true
+    useDelay: 5
+    icon:
+      sprite: Mobs/Animals/mothroach/mothroach.rsi
+      state: icon
+    clientExclusive: true
+  - type: InstantAction
+    event: !type:TogglePersonalLightActionEvent {}

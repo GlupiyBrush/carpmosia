@@ -1,0 +1,26 @@
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons, BaseSecurityContraband]
+  id: ClothingEyesGogglesNightVision
+  name: night vision goggles
+  description: Standard issue night vision goggles of the NanoTrasen's Small Arms Division.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/noir.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: EyeProtection
+    protectionTime: -15
+  - type: NightVisionOverlay
+  - type: PersonalLight
+  - type: PointLight
+    netsync: false
+    radius: 8
+    energy: 0.1
+    castShadows: false
+    enabled: false
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
