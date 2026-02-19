@@ -5,9 +5,9 @@
   description: Standard issue night vision goggles of the NanoTrasen's Small Arms Division.
   components:
   - type: Sprite
-    sprite: Clothing/Eyes/Glasses/noir.rsi
+    sprite: _Carpmosia/Clothing/Eyes/Goggles/syndie.rsi
   - type: Clothing
-    sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+    sprite: _Carpmosia/Clothing/Eyes/Goggles/syndie.rsi
   - type: IdentityBlocker
     coverage: EYES
   - type: EyeProtection

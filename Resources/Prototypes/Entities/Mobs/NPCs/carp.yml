@@ -86,6 +86,20 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
+    - type: PointLight
+      netsync: false
+      radius: 4
+      energy: 0.5
+      castShadows: false
+      enabled: false
+    - type: PersonalLight
+    - type: MobStateActions
+      actions:
+        Alive:
+        - ActionTogglePersonalLight
+        Critical:
+        - ActionCritSuccumb
+        - ActionCritLastWords
 
 - type: entity
   parent: BaseMobCarp

@@ -514,17 +514,6 @@
         layer:
         - SmallMobLayer
   - type: GhostTakeoverAvailable
-  - type: PointLight
-    netsync: false
-    radius: 4
-    energy: 0.5
-    castShadows: false
-    enabled: false
-  - type: PersonalLight
-  - type: MobStateActions
-    actions:
-      Alive:
-      - ActionTogglePersonalLight
   - type: Speech
     speechVerb: Moth
     speechSounds: Squeak

@@ -1,0 +1,18 @@
+- type: entity
+  id: BasePersonalLight
+  components:
+  - type: PointLight
+    netsync: false
+    radius: 4
+    energy: 0.5
+    castShadows: false
+    enabled: false
+  - type: PersonalLight
+  - type: MobStateActions
+    actions:
+      Alive:
+      - ActionTogglePersonalLight
+      Critical:
+      - ActionCritSuccumb
+      - ActionCritFakeDeath
+      - ActionCritLastWords
