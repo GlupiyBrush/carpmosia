@@ -1,0 +1,32 @@
+light_mode unshaded;
+
+uniform sampler2D SCREEN_TEXTURE;
+uniform sampler2D LIGHT_TEXTURE;
+
+uniform highp vec3 Tint;
+uniform highp float luminance_threshold;
+
+void fragment() {
+    highp vec4 color = zTextureSpec(SCREEN_TEXTURE, UV);
+    highp vec4 light = zTextureSpec(LIGHT_TEXTURE, UV);
+
+    highp float gray = zGrayscale(color.rgb);
+    highp float grayLight = pow(zGrayscale(light.rgb), 0.1);
+
+    if (grayLight <= 0.75) {
+        gray = pow(gray, 0.25);
+    } else if (gray != 0) {
+        gray = pow(gray, 1 - grayLight * 1.1);
+    }
+
+    if (gray <= 0.01){
+        gray = 0.01;
+    } if (gray >= 0.95) {
+        gray = 0.95;
+    }
+    gray = pow(gray, 2);
+
+    color.rgb = Tint * vec3(gray);
+
+    COLOR = vec4(color.rgb, color.a);
+}
